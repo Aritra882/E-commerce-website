@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AURA Minimalist Goods - Premium everyday essentials including watches, wallets, backpacks, and eyewear. Simple, functional, and high quality.">
+    <title>AURA | Premium Minimalist Goods</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcement-bar">
+        <div class="announcement-slider">
+            <span class="announcement-item active">Free shipping on orders over $150</span>
+            <span class="announcement-item">Use code AURA10 for 10% off your first order</span>
+            <span class="announcement-item">New Workspace Collection now available</span>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <a href="#" class="brand-logo" id="brand-logo">AURA</a>
+            <ul class="nav-menu">
+                <li><a href="#shop" class="nav-link active">Shop</a></li>
+                <li><a href="#about" class="nav-link">Our Story</a></li>
+                <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="search-toggle-btn" id="search-toggle-btn" aria-label="Search collection">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="wishlist-toggle-btn" id="wishlist-toggle-btn" aria-label="Open wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="wishlist-badge" id="wishlist-badge">0</span>
+                </button>
+                <button class="cart-toggle-btn" id="cart-toggle-btn" aria-label="Open shopping cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Interactive Search Bar Overlay -->
+        <div class="search-bar-wrapper" id="search-bar-wrapper">
+            <div class="container search-inner">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="search-input" class="search-input" placeholder="Search product name, category, details...">
+                <button class="search-close-btn" id="search-close-btn" aria-label="Close search">&times;</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Slider Section -->
+        <section class="hero-slider" id="hero-slider">
+            <div class="slider-container">
+                <!-- Slide 1 -->
+                <div class="slide active" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(249, 249, 251, 0.8)), url('images/watch.png');">
+                    <div class="container slide-content">
+                        <p class="hero-subtitle">The Chrono Series</p>
+                        <h1 class="hero-title">Sleek design.<br>Timeless function.</h1>
+                        <p class="hero-description">Stripped of excess, featuring Japanese quartz movement and full-grain Italian leather.</p>
+                        <a href="#shop" class="btn-primary" onclick="triggerFilter('Timepieces')">Shop Timepieces</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(249, 249, 251, 0.8)), url('images/deskmat.png');">
+                    <div class="container slide-content">
+                        <p class="hero-subtitle">New Workspace Essentials</p>
+                        <h1 class="hero-title">Structured room<br>for your mind.</h1>
+                        <p class="hero-description">Natural Merino Wool Desk Mats designed to anchor your keyboard, mouse, and daily routine.</p>
+                        <a href="#shop" class="btn-primary" onclick="triggerFilter('Desk & Home')">Explore Desk Mats</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(249, 249, 251, 0.8)), url('images/backpack.png');">
+                    <div class="container slide-content">
+                        <p class="hero-subtitle">The Travel Series</p>
+                        <h1 class="hero-title">Built for the<br>path ahead.</h1>
+                        <p class="hero-description">Full-grain roll-top leather backpacks engineered to protect and carry your essentials.</p>
+                        <a href="#shop" class="btn-primary" onclick="triggerFilter('Travel')">Discover Travel Bags</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="slider-arrow prev" id="slider-prev" aria-label="Previous slide">&#8592;</button>
+                <div class="slider-dots" id="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button class="slider-arrow next" id="slider-next" aria-label="Next slide">&#8594;</button>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section" id="shop">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">The Core Collection</h2>
+                        <p class="section-subtitle">Exquisite design in every detail</p>
+                    </div>
+                    <!-- Filter Tabs -->
+                    <div class="filter-tabs" id="filter-tabs">
+                        <button class="filter-tab active" data-category="all">All Items</button>
+                        <button class="filter-tab" data-category="Timepieces">Timepieces</button>
+                        <button class="filter-tab" data-category="Travel">Travel</button>
+                        <button class="filter-tab" data-category="Desk & Home">Desk & Home</button>
+                        <button class="filter-tab" data-category="Accessories">Accessories</button>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be dynamically populated here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Split Promo Section -->
+        <section class="editorial-section">
+            <div class="container">
+                <div class="editorial-grid">
+                    <div class="editorial-image-container">
+                        <img src="images/watch.png" alt="AURA Design Ethos" class="editorial-image">
+                    </div>
+                    <div class="editorial-content">
+                        <p class="editorial-subtitle">Design Philosophy</p>
+                        <h2 class="editorial-title">Stripped of all excess. Built to last.</h2>
+                        <p class="editorial-text">
+                            At AURA, we believe premium tools shouldn't demand attention through noise. By reducing products to their essential geometric forms and using only authentic materials like vegetable-tanned leather, anodized aluminum, and merino wool, we create everyday companions that get better with age.
+                        </p>
+                        <div class="editorial-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Sustainable Materials</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">Lifetime</span>
+                                <span class="stat-label">Hardware Guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Cart</h3>
+            <button class="close-btn" id="cart-close-btn" aria-label="Close shopping cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <!-- Dynamically populated cart items -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="cart-summary-row">
+                <span>Estimated Tax (8%)</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="cart-summary-row total">
+                <span>Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Slide-out Wishlist Drawer -->
+    <div class="wishlist-overlay" id="wishlist-overlay"></div>
+    <aside class="wishlist-drawer" id="wishlist-drawer">
+        <div class="wishlist-header">
+            <h3 class="wishlist-title">Your Wishlist</h3>
+            <button class="close-btn" id="wishlist-close-btn" aria-label="Close wishlist">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="wishlist-body" id="wishlist-body">
+            <!-- Dynamically populated wishlist items -->
+        </div>
+        <div class="wishlist-footer">
+            <button class="add-all-to-cart-btn" id="add-all-to-cart-btn">Add All to Cart</button>
+        </div>
+    </aside>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Quick View Product Modal -->
+    <div class="modal-overlay" id="quickview-modal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="quickview-close" aria-label="Close product view">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="quick-view-layout" id="quickview-content">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-container" style="max-width: 500px;">
+            <button class="modal-close-btn" id="checkout-close" aria-label="Close checkout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="checkout-layout">
+                <h3 class="checkout-title">Shipping & Payment</h3>
+                <form class="checkout-form" id="checkout-form">
+                    <div class="form-group">
+                        <label for="checkout-name">Full Name</label>
+                        <input type="text" id="checkout-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-email">Email Address</label>
+                        <input type="email" id="checkout-email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-address">Shipping Address</label>
+                        <input type="text" id="checkout-address" required placeholder="123 Minimalist Way, Apt 4B">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkout-city">City</label>
+                            <input type="text" id="checkout-city" required placeholder="New York">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-zip">Zip Code</label>
+                            <input type="text" id="checkout-zip" required placeholder="10001">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-card">Card Number</label>
+                        <input type="text" id="checkout-card" required placeholder="4111 2222 3333 4444" pattern="^[0-9\s]{13,19}$">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkout-expiry">Expiry Date</label>
+                            <input type="text" id="checkout-expiry" required placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-cvv">CVV</label>
+                            <input type="text" id="checkout-cvv" required placeholder="123" pattern="^[0-9]{3,4}$">
+                        </div>
+                    </div>
+                    <button type="submit" class="checkout-submit-btn">Complete Purchase</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Confirmation Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-container" style="max-width: 450px;">
+            <div class="success-layout" id="success-layout-content">
+                <!-- Dynamically populated success content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-brand-title">AURA</h3>
+                    <p class="footer-brand-desc">Making everyday essentials. Built on clean geometry, premium finishes, and enduring materials. We design tools to enrich your daily routine.</p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shop" onclick="triggerFilter('Timepieces')">Timepieces</a></li>
+                        <li><a href="#shop" onclick="triggerFilter('Travel')">Bags & Travel</a></li>
+                        <li><a href="#shop" onclick="triggerFilter('Accessories')">Accessories</a></li>
+                        <li><a href="#shop" onclick="triggerFilter('Desk & Home')">Desk & Home</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div id="newsletter">
+                    <h4 class="footer-col-title">Newsletter</h4>
+                    <p class="footer-brand-desc" style="margin-bottom: 16px; font-size: 13px;">Subscribe for exclusive collection drops and minimalist design editorials.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required id="newsletter-email">
+                        <button type="submit" class="newsletter-submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURA Minimalist Goods. All rights reserved.</p>
+                <p>Designed with simplicity in mind.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Execution -->
+    <script>
+        // --- Product Database ---
+        const PRODUCTS = [
+            {
+                id: 'aura-watch',
+                name: 'Aura Minimalist Chrono',
+                category: 'Timepieces',
+                price: 189.00,
+                rating: 4.9,
+                reviewsCount: 112,
+                badge: 'Best Seller',
+                image: 'images/watch.png',
+                description: 'Designed for the modern professional, this chronograph combines brushed matte black stainless steel with a genuine full-grain leather strap. It embodies our philosophy of subtraction: doing more with less.',
+                specs: {
+                    'Case Material': '316L Stainless Steel',
+                    'Strap': 'Italian Vegetable-Tanned Leather',
+                    'Movement': 'Miyota Japanese Quartz',
+                    'Water Resistance': '5 ATM'
+                }
+            },
+            {
+                id: 'aura-backpack',
+                name: 'Roll-Top Leather Backpack',
+                category: 'Travel',
+                price: 249.00,
+                rating: 4.8,
+                reviewsCount: 94,
+                badge: 'New Arrival',
+                image: 'images/backpack.png',
+                description: 'Handcrafted from vegetable-tanned full-grain leather, this roll-top backpack is engineered to protect your daily essentials. Featuring a padded laptop sleeve and hidden anti-theft pocket.',
+                specs: {
+                    'Material': 'Full-Grain Cowhide Leather',
+                    'Lining': 'Water-Resistant Cotton Canvas',
+                    'Capacity': '18L (Expandable to 24L)',
+                    'Laptop Sleeve': 'Fits up to 16" MacBook'
+                }
+            },
+            {
+                id: 'aura-wallet',
+                name: 'Carbon Fiber Cardholder',
+                category: 'Accessories',
+                price: 65.00,
+                rating: 4.6,
+                reviewsCount: 143,
+                badge: 'Minimalist',
+                image: 'images/wallet.png',
+                description: 'A sleek, pocket-sized fortress for your cards. Constructed from aerospace-grade carbon fiber and premium elastic webbing. Designed to block RFID signals to prevent digital theft.',
+                specs: {
+                    'Material': 'Aerospace-Grade Carbon Fiber',
+                    'Capacity': 'Holds 1-12 Cards',
+                    'Weight': '1.6 oz',
+                    'Security': 'RFID Blocking Technology'
+                }
+            },
+            {
+                id: 'aura-sunglasses',
+                name: 'Acetate Polarized Sunglasses',
+                category: 'Timepieces',
+                price: 120.00,
+                rating: 4.7,
+                reviewsCount: 31,
+                badge: 'Limited',
+                image: 'images/sunglasses.png',
+                description: 'Timeless design met with modern lens technology. Crafted from premium Italian biodegradable acetate frames and fitted with high-definition polarized lenses providing 100% UVA/UVB protection.',
+                specs: {
+                    'Frame': 'Premium Bio-Acetate',
+                    'Lens': 'CR-39 Polarized (Category 3)',
+                    'Hardware': 'Durable 5-Barrel Hinges',
+                    'Fit': 'Medium (Unisex)'
+                }
+            },
+            {
+                id: 'aura-desk-mat',
+                name: 'Merino Wool Felt Desk Mat',
+                category: 'Desk & Home',
+                price: 79.00,
+                rating: 4.9,
+                reviewsCount: 34,
+                badge: 'Desk Essential',
+                image: 'images/deskmat.png',
+                description: 'Carve out a premium workspace. Made from natural merino wool felt, this desk mat anchors your keyboard and mouse while protecting your tabletop and providing warm tactile comfort.',
+                specs: {
+                    'Material': '100% German Merino Wool Felt',
+                    'Thickness': '5mm',
+                    'Backing': 'Natural Cork Non-Slip Webbing',
+                    'Size': 'Medium (31" x 11.8")'
+                }
+            },
+            {
+                id: 'aura-keyboard',
+                name: 'Sleek Mechanical Keyboard',
+                category: 'Desk & Home',
+                price: 199.00,
+                rating: 4.8,
+                reviewsCount: 57,
+                badge: 'Hot Seller',
+                image: 'images/keyboard.png',
+                description: 'A tactile masterpiece for creators and engineers. Encased in a solid CNC-milled aluminum chassis, featuring custom silent linear switches and custom PBT keycaps.',
+                specs: {
+                    'Switches': 'Silent Linear Mechanical Switches',
+                    'Chassis': 'CNC-Anodized Aluminum',
+                    'Connectivity': 'Bluetooth 5.1 / USB-C',
+                    'Battery Life': 'Up to 3 months (LEDs off)'
+                }
+            },
+            {
+                id: 'aura-pen',
+                name: 'Precision Brass Rollerball Pen',
+                category: 'Accessories',
+                price: 45.00,
+                rating: 4.7,
+                reviewsCount: 19,
+                badge: 'Brass Craft',
+                image: 'images/pen.png',
+                description: 'Engineered to last generations. Machined from a solid block of eco-brass, this pocket pen features a capped thread system and develops a custom golden-brown patina over time.',
+                specs: {
+                    'Body Material': 'Solid Eco-Brass',
+                    'Ink Refill': 'Schmidt P8126 Rollerball Refill',
+                    'Length': '4.8 inches (Capped)',
+                    'Weight': '1.8 oz'
+                }
+            },
+            {
+                id: 'aura-headphones',
+                name: 'Active Noise-Canceling Headphones',
+                category: 'Desk & Home',
+                price: 299.00,
+                rating: 4.9,
+                reviewsCount: 88,
+                badge: 'Acoustics',
+                image: 'images/headphones.png',
+                description: 'Immersive sound, minimalist form. Outfitted with high-efficiency 40mm beryllium drivers, active hybrid noise cancellation, and premium leather memory foam ear cups.',
+                specs: {
+                    'Driver Unit': '40mm Beryllium Diaphragm',
+                    'ANC': 'Hybrid Active Noise Cancelling',
+                    'Battery': '30 Hours Playing Time',
+                    'Codec Support': 'LDAC, aptX Adaptive, AAC'
+                }
+            },
+            {
+                id: 'aura-charger',
+                name: 'Magnetic Wireless Charging Pad',
+                category: 'Desk & Home',
+                price: 85.00,
+                rating: 4.6,
+                reviewsCount: 42,
+                badge: 'Power',
+                image: 'images/charger.png',
+                description: 'Fast, secure charging wrapped in simplicity. An aluminum core paired with a premium full-grain leather landing pad, equipped with strong MagSafe-compatible magnets.',
+                specs: {
+                    'Input': '9V/2A, 12V/1.5A (USB-C)',
+                    'Wireless Output': 'Up to 15W Fast Charge',
+                    'Material': 'Anodized Aluminum & Cowhide Leather',
+                    'Compatibility': 'MagSafe & Qi-enabled devices'
+                }
+            },
+            {
+                id: 'aura-key-organizer',
+                name: 'Premium Leather Key Organizer',
+                category: 'Accessories',
+                price: 39.00,
+                rating: 4.8,
+                reviewsCount: 65,
+                badge: 'Organizer',
+                image: 'images/keyorganizer.png',
+                description: 'Transform your keys from a noisy jangle to a silent, organized stack. Handcrafted from top-grain leather with a stainless steel locking mechanism.',
+                specs: {
+                    'Capacity': 'Holds up to 7 standard keys',
+                    'Leather': 'Vegetable-Tanned Full-Grain Leather',
+                    'Hardware': '316L Stainless Steel Locking Post',
+                    'Extension': 'Includes D-ring for car key fob'
+                }
+            }
+        ];
+
+        // --- Shopping Cart & Wishlist States ---
+        let cart = [];
+        let wishlist = [];
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        // Load cart and wishlist from LocalStorage
+        function loadStorage() {
+            const savedCart = localStorage.getItem('aura_cart');
+            if (savedCart) {
+                try { cart = JSON.parse(savedCart); } catch(e) { cart = []; }
+            }
+            const savedWish = localStorage.getItem('aura_wishlist');
+            if (savedWish) {
+                try { wishlist = JSON.parse(savedWish); } catch(e) { wishlist = []; }
+            }
+            renderCart();
+            renderWishlist();
+        }
+
+        // Save cart to LocalStorage
+        function saveCart() {
+            localStorage.setItem('aura_cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        // Save wishlist to LocalStorage
+        function saveWishlist() {
+            localStorage.setItem('aura_wishlist', JSON.stringify(wishlist));
+            renderWishlist();
+            filterProducts(); // update hearts in grids
+        }
+
+        // --- DOM Elements ---
+        const productsGrid = document.getElementById('products-grid');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartToggleBtn = document.getElementById('cart-toggle-btn');
+        const cartCloseBtn = document.getElementById('cart-close-btn');
+        const cartBody = document.getElementById('cart-body');
+        const cartBadge = document.getElementById('cart-badge');
+        const cartSubtotalEl = document.getElementById('cart-subtotal');
+        const cartTaxEl = document.getElementById('cart-tax');
+        const cartTotalEl = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+
+        const wishlistDrawer = document.getElementById('wishlist-drawer');
+        const wishlistOverlay = document.getElementById('wishlist-overlay');
+        const wishlistToggleBtn = document.getElementById('wishlist-toggle-btn');
+        const wishlistCloseBtn = document.getElementById('wishlist-close-btn');
+        const wishlistBody = document.getElementById('wishlist-body');
+        const wishlistBadge = document.getElementById('wishlist-badge');
+        const addAllToCartBtn = document.getElementById('add-all-to-cart-btn');
+
+        // Search Elements
+        const searchToggleBtn = document.getElementById('search-toggle-btn');
+        const searchBarWrapper = document.getElementById('search-bar-wrapper');
+        const searchCloseBtn = document.getElementById('search-close-btn');
+        const searchInput = document.getElementById('search-input');
+
+        // Modals
+        const quickviewModal = document.getElementById('quickview-modal');
+        const quickviewClose = document.getElementById('quickview-close');
+        const quickviewContent = document.getElementById('quickview-content');
+
+        const checkoutModal = document.getElementById('checkout-modal');
+        const checkoutClose = document.getElementById('checkout-close');
+        const checkoutForm = document.getElementById('checkout-form');
+
+        const successModal = document.getElementById('success-modal');
+        const successLayoutContent = document.getElementById('success-layout-content');
+
+        const newsletterForm = document.getElementById('newsletter-form');
+
+        // --- Toast Notification ---
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('visible'), 10);
+            setTimeout(() => {
+                toast.classList.remove('visible');
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+
+        // --- Initialize Products ---
+        function filterProducts() {
+            const filtered = PRODUCTS.filter(product => {
+                const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
+                const matchesSearch = !searchQuery || 
+                                      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      product.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+            renderProductsList(filtered);
+        }
+
+        function renderProductsList(productsToRender) {
+            if (productsToRender.length === 0) {
+                productsGrid.innerHTML = `
+                    <div class="no-products-state">
+                        <p>No premium essentials found matching your search.</p>
+                        <button class="btn-primary" style="margin-top: 16px; padding: 12px 24px;" onclick="resetSearchFilters()">Clear Search</button>
+                    </div>
+                `;
+                return;
+            }
+
+            productsGrid.innerHTML = productsToRender.map(product => {
+                const inWishlist = wishlist.includes(product.id);
+                const starRatingHtml = Array.from({ length: 5 }, (_, i) => {
+                    return `<span class="star">${i < Math.floor(product.rating) ? '★' : '☆'}</span>`;
+                }).join('');
+
+                return `
+                <article class="product-card">
+                    <div class="product-image-container">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        <button class="wishlist-btn ${inWishlist ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlistItem('${product.id}')" aria-label="Add to wishlist">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="${inWishlist ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy" onclick="openQuickview('${product.id}')">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${product.category}</span>
+                        <h3 class="product-title" onclick="openQuickview('${product.id}')">${product.name}</h3>
+                        <div class="product-rating-row">
+                            <div class="product-stars">${starRatingHtml}</div>
+                            <span class="product-reviews">(${product.reviewsCount} reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$${product.price.toFixed(2)}</span>
+                            <button class="add-to-cart-btn" onclick="addToCart('${product.id}')" aria-label="Add to cart">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                `;
+            }).join('');
+        }
+
+        window.resetSearchFilters = function() {
+            searchInput.value = '';
+            searchQuery = '';
+            activeCategory = 'all';
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-category') === 'all');
+            });
+            filterProducts();
+        };
+
+        window.triggerFilter = function(category) {
+            activeCategory = category;
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.getAttribute('data-category') === category);
+            });
+            filterProducts();
+            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // --- Drawer Controllers ---
+        function toggleCart(open = true) {
+            if (open) {
+                cartDrawer.classList.add('active');
+                cartOverlay.classList.add('active');
+            } else {
+                cartDrawer.classList.remove('active');
+                cartOverlay.classList.remove('active');
+            }
+        }
+
+        function toggleWishlist(open = true) {
+            if (open) {
+                wishlistDrawer.classList.add('active');
+                wishlistOverlay.classList.add('active');
+            } else {
+                wishlistDrawer.classList.remove('active');
+                wishlistOverlay.classList.remove('active');
+            }
+        }
+
+        // --- Quick View Modal Controller ---
+        window.openQuickview = function(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const specsHtml = Object.entries(product.specs).map(([key, value]) => `
+                <li>
+                    <span>${key}</span>
+                    <span>${value}</span>
+                </li>
+            `).join('');
+
+            quickviewContent.innerHTML = `
+                <div class="quick-view-gallery">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="quick-view-details">
+                    <span class="qv-category">${product.category}</span>
+                    <h3 class="qv-title">${product.name}</h3>
+                    <div class="qv-price">$${product.price.toFixed(2)}</div>
+                    <p class="qv-description">${product.description}</p>
+                    
+                    <h4 class="qv-specs-title">Specifications</h4>
+                    <ul class="qv-specs-list">
+                        ${specsHtml}
+                    </ul>
+
+                    <div class="qv-action-row">
+                        <div class="qv-quantity-wrapper">
+                            <button class="qty-btn" onclick="adjustQuickviewQty(-1)">-</button>
+                            <span class="qty-val" id="qv-qty-value">1</span>
+                            <button class="qty-btn" onclick="adjustQuickviewQty(1)">+</button>
+                        </div>
+                        <button class="qv-btn-primary" onclick="addQuickviewProductToCart('${product.id}')">Add to Cart</button>
+                    </div>
+                </div>
+            `;
+            quickviewModal.classList.add('active');
+        };
+
+        let currentQvQty = 1;
+        window.adjustQuickviewQty = function(amount) {
+            currentQvQty = Math.max(1, currentQvQty + amount);
+            const valEl = document.getElementById('qv-qty-value');
+            if (valEl) valEl.innerText = currentQvQty;
+        };
+
+        window.addQuickviewProductToCart = function(productId) {
+            addToCart(productId, currentQvQty);
+            quickviewModal.classList.remove('active');
+            currentQvQty = 1; // reset quantity tracker
+        };
+
+        // --- Cart Management Functions ---
+        window.addToCart = function(productId, qty = 1) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += qty;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: qty
+                });
+            }
+
+            saveCart();
+            showToast(`Added ${qty}x ${product.name} to Cart!`);
+        };
+
+        window.changeQty = function(productId, amount) {
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+
+            item.quantity += amount;
+            if (item.quantity <= 0) {
+                cart = cart.filter(item => item.id !== productId);
+            }
+            saveCart();
+        };
+
+        window.removeFromCart = function(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+        };
+
+        // --- Render Cart Function ---
+        function renderCart() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartBadge.innerText = totalItems;
+
+            if (cart.length === 0) {
+                cartBody.innerHTML = `
+                    <div class="cart-empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <p>Your shopping cart is empty.</p>
+                    </div>
+                `;
+                checkoutBtn.disabled = true;
+                cartSubtotalEl.innerText = '$0.00';
+                cartTaxEl.innerText = '$0.00';
+                cartTotalEl.innerText = '$0.00';
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            cartBody.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-title">${item.name}</h4>
+                        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+                                <span class="qty-val">${item.quantity}</span>
+                                <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+                            </div>
+                            <button class="remove-item-btn" onclick="removeFromCart('${item.id}')">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
+
+            cartSubtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+            cartTaxEl.innerText = `$${tax.toFixed(2)}`;
+            cartTotalEl.innerText = `$${total.toFixed(2)}`;
+        }
+
+        // --- Wishlist Management Functions ---
+        window.toggleWishlistItem = function(productId) {
+            const index = wishlist.indexOf(productId);
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                showToast(`Removed ${product.name} from Wishlist.`);
+            } else {
+                wishlist.push(productId);
+                showToast(`Added ${product.name} to Wishlist!`);
+            }
+            saveWishlist();
+        };
+
+        function renderWishlist() {
+            wishlistBadge.innerText = wishlist.length;
+
+            if (wishlist.length === 0) {
+                wishlistBody.innerHTML = `
+                    <div class="cart-empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <p>Your wishlist is empty.</p>
+                    </div>
+                `;
+                addAllToCartBtn.style.display = 'none';
+                return;
+            }
+
+            addAllToCartBtn.style.display = 'block';
+            wishlistBody.innerHTML = wishlist.map(productId => {
+                const item = PRODUCTS.find(p => p.id === productId);
+                if (!item) return '';
+                return `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-title">${item.name}</h4>
+                        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                        <div class="cart-item-actions">
+                            <button class="btn-primary" style="font-size: 10px; padding: 6px 12px; border-radius: 4px; text-transform: uppercase;" onclick="addFromWishlistToCart('${item.id}')">Add to Cart</button>
+                            <button class="remove-item-btn" onclick="toggleWishlistItem('${item.id}')">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        window.addFromWishlistToCart = function(productId) {
+            addToCart(productId);
+            wishlist = wishlist.filter(id => id !== productId);
+            saveWishlist();
+        };
+
+        // Add all wishlist items to cart
+        addAllToCartBtn.addEventListener('click', () => {
+            wishlist.forEach(productId => addToCart(productId));
+            wishlist = [];
+            saveWishlist();
+            toggleWishlist(false);
+            showToast("Added all wishlist items to Cart!");
+        });
+
+        // --- Hero Slider ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
+        let sliderInterval;
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        function startSlider() {
+            clearInterval(sliderInterval);
+            sliderInterval = setInterval(nextSlide, 6000);
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => { prevSlide(); startSlider(); });
+            nextBtn.addEventListener('click', () => { nextSlide(); startSlider(); });
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.getAttribute('data-index'));
+                showSlide(idx);
+                startSlider();
+            });
+        });
+
+        // --- Announcement Slider ---
+        let currentAnnouncement = 0;
+        const announcements = document.querySelectorAll('.announcement-item');
+        if (announcements.length > 0) {
+            setInterval(() => {
+                announcements[currentAnnouncement].classList.remove('active');
+                currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
+                announcements[currentAnnouncement].classList.add('active');
+            }, 4000);
+        }
+
+        // --- Setup Event Listeners ---
+
+        // Cart Drawer
+        cartToggleBtn.addEventListener('click', () => toggleCart(true));
+        cartCloseBtn.addEventListener('click', () => toggleCart(false));
+        cartOverlay.addEventListener('click', () => toggleCart(false));
+
+        // Wishlist Drawer
+        wishlistToggleBtn.addEventListener('click', () => toggleWishlist(true));
+        wishlistCloseBtn.addEventListener('click', () => toggleWishlist(false));
+        wishlistOverlay.addEventListener('click', () => toggleWishlist(false));
+
+        // Search Interface
+        searchToggleBtn.addEventListener('click', () => {
+            searchBarWrapper.classList.add('active');
+            searchInput.focus();
+        });
+        searchCloseBtn.addEventListener('click', () => {
+            searchBarWrapper.classList.remove('active');
+            searchInput.value = '';
+            searchQuery = '';
+            filterProducts();
+        });
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterProducts();
+        });
+
+        // Setup Filter Tabs (Shop Page)
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeCategory = tab.getAttribute('data-category');
+                filterProducts();
+            });
+        });
+
+        // Quick View Close
+        quickviewClose.addEventListener('click', () => quickviewModal.classList.remove('active'));
+        quickviewModal.addEventListener('click', (e) => {
+            if (e.target === quickviewModal) quickviewModal.classList.remove('active');
+        });
+
+        // Checkout Triggers
+        checkoutBtn.addEventListener('click', () => {
+            toggleCart(false);
+            checkoutModal.classList.add('active');
+        });
+        checkoutClose.addEventListener('click', () => checkoutModal.classList.remove('active'));
+        checkoutModal.addEventListener('click', (e) => {
+            if (e.target === checkoutModal) checkoutModal.classList.remove('active');
+        });
+
+        // Complete Checkout Action & Receipt Generation
+        checkoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const orderId = 'AUR-' + Math.floor(100000 + Math.random() * 900000);
+            const customerName = document.getElementById('checkout-name').value;
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
+
+            // Generate detailed confirmation screen
+            successLayoutContent.innerHTML = `
+                <div class="success-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3 class="success-title">Order Confirmed</h3>
+                <p class="success-message">Thank you for your purchase, ${customerName}. Your payment was processed successfully. A confirmation email with tracking information has been sent.</p>
+                <div class="success-order-num">ORDER #${orderId}</div>
+                <div class="receipt-summary">
+                    <h4 class="receipt-title">Summary</h4>
+                    <ul class="receipt-items">
+                        ${cart.map(item => `
+                            <li>
+                                <span>${item.quantity}x ${item.name}</span>
+                                <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <div class="receipt-total-row">
+                        <span>Total Paid</span>
+                        <span>$${total.toFixed(2)}</span>
+                    </div>
+                </div>
+                <button class="btn-primary" id="success-close" style="width: 100%; margin-top: 16px;">Return to Shop</button>
+            `;
+
+            // Clear state
+            cart = [];
+            localStorage.removeItem('aura_cart');
+            renderCart();
+
+            checkoutModal.classList.remove('active');
+            successModal.classList.add('active');
+            checkoutForm.reset();
+
+            // Re-attach success close listener
+            document.getElementById('success-close').addEventListener('click', () => {
+                successModal.classList.remove('active');
+            });
+        });
+
+        // Newsletter Submit
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('newsletter-email');
+            showToast(`Subscribed! Minimalist drops will be sent to: ${emailInput.value}`);
+            newsletterForm.reset();
+        });
+
+        // Header Scrolling Transitions
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('site-header');
+            const announce = document.getElementById('announcement-bar');
+            
+            if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+                if (announce) announce.style.transform = 'translateY(-40px)';
+                header.style.top = '0';
+            } else {
+                header.classList.remove('scrolled');
+                if (announce) announce.style.transform = 'translateY(0)';
+                header.style.top = '40px';
+            }
+
+            // Sync active links
+            const scrollPos = window.scrollY + 200;
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1) {
+                    const section = document.querySelector(href);
+                    if (section) {
+                        const top = section.offsetTop;
+                        const height = section.offsetHeight;
+                        if (scrollPos >= top && scrollPos < top + height) {
+                            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                            link.classList.add('active');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Initialize App
+        loadStorage();
+        filterProducts();
+        startSlider();
+    </script>
+</body>
+</html>
